@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-3" *ngFor="let item of danhSachPhim">
+        <app-item-phim [movie]="item" (eventMovie)="like($event)"></app-item-phim>
+      </div>
+  </div>
+  <br>
+  <input type="number" placeholder="Nhập mã phim" #maphim>
+  <button class="btn btn-success" (click)="viewChildren()">ViewChildren</button>
+  <br>
+  <h3>Số like</h3>
+  <p *ngFor="let item of danhSachLike">
+    {{item.tenPhim}}: {{item.soLike}}
+  </p>
+
+</div>

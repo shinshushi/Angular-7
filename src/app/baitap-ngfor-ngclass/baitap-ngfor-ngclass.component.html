@@ -1,0 +1,36 @@
+<h1 class="display-3 text-center">Bai tap ngFor va ngClass</h1>
+<div class="container">
+  <div class="form-group">
+    <label for="usr">Mã SP:</label>
+    <input type="text" class="form-control" #masp>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Tên SP:</label>
+    <input type="text" class="form-control" #tensp>
+  </div>
+  <div class="form-group">
+    <label for="usr">Giá:</label>
+    <input type="text" class="form-control" #gia>
+  </div>
+  <button class="btn btn-success" (click)="themSanPham(masp.value,tensp.value,gia.value)">Thêm sản phẩm</button>
+  <br><br><br>
+  <!-- TABLE -->
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>STT</th>
+        <th>Mã SP</th>
+        <th>Tên SP</th>
+        <th>Giá</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let SP of dsSP; let stt = index" [ngClass]="{'bg-light': stt % 2 == 0}">
+        <td>{{stt+1}}</td>
+        <td>{{SP.maSP}}</td>
+        <td>{{SP.tenSP}}</td>
+        <td>{{SP.gia}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

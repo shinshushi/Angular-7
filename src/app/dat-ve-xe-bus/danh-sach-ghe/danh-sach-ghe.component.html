@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <ng-container *ngFor="let item of mangGhe; let index = index">
+        <br *ngIf="index % 4 == 0">
+        <app-item-ghe [ghe]="item"></app-item-ghe>
+      </ng-container>
+    </div>
+    <div class="col-sm-6">
+      <h3>Danh sách ghế được đặt</h3>
+    </div>
+  </div>
+</div>
